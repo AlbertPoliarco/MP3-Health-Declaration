@@ -2,6 +2,8 @@ const express = require("express")
 const cors = require("cors")
 const mongoose = require("mongoose")
 
+const HealthRouter = require("./routes/health")
+
 require("dotenv").config()
 
 const app = express()
@@ -22,6 +24,8 @@ const connection = mongoose.connection
 connection.once("open", () => {
   console.log("MongoDB database connection is established.")
 })
+
+app.use("/health", HealthRouter)
 
 app.listen(port, () => {
   console.log(`Server is running in port: ${port}`)
