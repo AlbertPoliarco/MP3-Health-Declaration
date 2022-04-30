@@ -30,6 +30,6 @@ const healthSchema = new Schema(
   }
 )
 
-const Health = mongoose.model("health", healthSchema)
+const Health = mongoose.model("health3", healthSchema)
 
 module.exports = Health
