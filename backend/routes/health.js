@@ -41,4 +41,21 @@ router.route("/:id").delete((req, res) => {
     .then((health) => res.json("Record was deleted!"))
     .catch((err) => res.status(400).json("Error: " + err))
 })
+
+// Update
+router.route("/update/:id").post((req, res) => {
+  Health.findById((req, res))
+    .then((health) => {
+      health.fullname = req.body.fullname
+      health.temperature = req.body.temperature
+      health.email = req.body.email
+      health.phonenumber = req.body.phonenumber
+
+      health
+        .save()
+        .then(() => res.json("Record was updated!"))
+        .catch((err) => res.status(400).json("Error :" + err))
+    })
+    .catch((err) => res.status(400).json("Error: " + err))
+})
 module.exports = router
