@@ -35,4 +35,10 @@ router.route("/:id").get((req, res) => {
     .catch((err) => res.status(400).json("Error: " + err))
 })
 
+// Delete
+router.route("/:id").delete((req, res) => {
+  Health.findByIdAndDelete(req.params.id)
+    .then((health) => res.json("Record was deleted!"))
+    .catch((err) => res.status(400).json("Error: " + err))
+})
 module.exports = router
