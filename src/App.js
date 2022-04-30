@@ -1,14 +1,11 @@
-// import "bootstrap"
-// import "bootstrap/dist/css/bootstrap.min.css"
-// import "bootstrap/dist/js/bootstrap.min.js"
-// const bootstrap = require("bootstrap")
+import { BrowserRouter as Router } from "react-router-dom"
+import Navbar from "./components/navbar.component"
 
 function App() {
   return (
-    <div className='App'>
-      <h1>Hello World</h1>
-      <h1>bye</h1>
-    </div>
+    <Router>
+      <Navbar />
+    </Router>
   )
 }
 
