@@ -44,7 +44,7 @@ router.route("/:id").delete((req, res) => {
 
 // Update
 router.route("/update/:id").post((req, res) => {
-  Health.findById((req, res))
+  Health.findById(req.params.id)
     .then((health) => {
       health.fullname = req.body.fullname
       health.temperature = req.body.temperature
