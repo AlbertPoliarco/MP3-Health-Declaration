@@ -1,3 +1,4 @@
+import axios from "axios"
 import React, { Component } from "react"
 
 export default class CreateHealth extends Component {
@@ -29,8 +30,16 @@ export default class CreateHealth extends Component {
 
   onSubmit(e) {
     e.preventDefault()
-
-    console.log(this.state)
+    const health = {
+      fullname: this.state.fullname,
+      temperature: this.state.temperature,
+      email: this.state.email,
+      phonenumber: this.state.phonenumber,
+    }
+    axios
+      .post("http://localhost:4000/health/add", health)
+      .then((res) => console.log(res.data))
+      .catch((err) => console.log("Error :" + err))
   }
 
   render() {
