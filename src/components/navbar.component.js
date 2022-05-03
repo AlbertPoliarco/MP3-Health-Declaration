@@ -1,4 +1,5 @@
-import React, { Component } from "react"
+import "bootstrap"
+import { Component } from "react"
 import { Link } from "react-router-dom"
 
 export default class Navbar extends Component {
@@ -23,7 +24,7 @@ export default class Navbar extends Component {
           <ul className='navbar-nav mr-auto'>
             <li className='nav-item active'>
               <Link className='nav-link' to='/'>
-                Home <span className='sr-only'>(current)</span>
+                Home
               </Link>
             </li>
             <li className='nav-item'>

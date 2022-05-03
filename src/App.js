@@ -10,9 +10,9 @@ function App() {
       <br />
       <Routes>
         <Route>
-          <Route path='/' component={HealthList} />
-          <Route path='/edit/:id' component={EditHealth} />
-          <Route path='/create' component={CreateHealth} />
+          <Route path='/' element={<HealthList />} />
+          <Route path='/edit/:id' element={<EditHealth />} />
+          <Route path='/create' element={<CreateHealth />} />
         </Route>
       </Routes>
     </Router>
