@@ -11,16 +11,10 @@ export default class CreateHealth extends Component {
       email: "",
       phonenumber: "",
     }
-    //  this.onFullNameChange = this.onFullNameChange.bind(this)
+
     this.onSubmit = this.onSubmit.bind(this)
     this.onValueChange = this.onValueChange.bind(this)
   }
-
-  //   onFullNameChange(e) {
-  //     this.setState({
-  //       fullname: e.target.value,
-  //     })
-  //   }
 
   onValueChange(e) {
     this.setState({
@@ -30,15 +24,17 @@ export default class CreateHealth extends Component {
 
   onSubmit(e) {
     e.preventDefault()
+
     const health = {
       fullname: this.state.fullname,
       temperature: this.state.temperature,
       email: this.state.email,
       phonenumber: this.state.phonenumber,
     }
+
     axios
       .post("http://localhost:4000/health/add", health)
-      .then((res) => console.log(res.data))
+      .then((res) => (window.location = "/"))
       .catch((err) => console.log("Error :" + err))
   }
 
@@ -58,6 +54,7 @@ export default class CreateHealth extends Component {
               onChange={this.onValueChange}
             />
           </div>
+
           <div className='form-group'>
             <label>Temperature</label>
             <input
@@ -69,6 +66,7 @@ export default class CreateHealth extends Component {
               onChange={this.onValueChange}
             />
           </div>
+
           <div className='form-group'>
             <label>Email</label>
             <input
@@ -79,6 +77,7 @@ export default class CreateHealth extends Component {
               onChange={this.onValueChange}
             />
           </div>
+
           <div className='form-group'>
             <label>Phone Number</label>
             <input

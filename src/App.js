@@ -9,11 +9,9 @@ function App() {
       <Navbar />
       <br />
       <Routes>
-        <Route>
-          <Route path='/' element={<HealthList />} />
-          <Route path='/edit/:id' element={<EditHealth />} />
-          <Route path='/create' element={<CreateHealth />} />
-        </Route>
+        <Route path='/' element={<HealthList />} />
+        <Route path='/update/:id' component={<EditHealth />} />
+        <Route path='/create' element={<CreateHealth />} />
       </Routes>
     </Router>
   )
