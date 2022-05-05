@@ -10,7 +10,7 @@ function App() {
       <br />
       <Routes>
         <Route path='/' element={<HealthList />} />
-        <Route path='/update/:id' component={<EditHealth />} />
+        <Route path='/edit/:id' element={<EditHealth />} />
         <Route path='/create' element={<CreateHealth />} />
       </Routes>
     </Router>

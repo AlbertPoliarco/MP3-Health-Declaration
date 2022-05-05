@@ -15,17 +15,41 @@ export default class EditHealth extends Component {
     this.onSubmit = this.onSubmit.bind(this)
     this.onValueChange = this.onValueChange.bind(this)
   }
-
   componentDidMount() {
-    axios.get("http://localhost:4000/health/").then((res) => {
-      this.setState({
-        fullname: res.data.fullname,
-        temperature: res.data.temperature,
-        email: res.data.email,
-        phonenumber: res.data.phonenumber,
+    axios
+      .get("https://localhost:4000/health/")
+      .then((res) => {
+        this.setState({
+          fullname: res.data.fullname,
+          temperature: res.data.temperature,
+          email: res.data.email,
+          phonenumber: res.data.phonenumber,
+        })
+        return res.data //  returning response
       })
-    })
+      // .then((res) => {
+      //   // do another request Note we have the result from the above
+      //   // getting response returned before
+      //   console.log(response)
+      // })
+      // Tag on .then here
+      .catch((error) => console.log(error))
   }
+  // componentDidMount() {
+  //   axios
+  //     .get("https://localhost:4000/health/" + this.props.match.params.id)
+  //     .then((res) => {
+  //       this.setState({
+  //         fullname: res.data.fullname,
+  //         temperature: res.data.temperature,
+  //         email: res.data.email,
+  //         phonenumber: res.data.phonenumber,
+  //       })
+  //     })
+  //     .catch((error) => {
+  //       console.log(error)
+  //     })
+  // }
 
   onValueChange(e) {
     this.setState({
@@ -42,8 +66,11 @@ export default class EditHealth extends Component {
       phonenumber: this.state.phonenumber,
     }
     axios
-      .post("http://localhost:4000/health/edit", health)
-      .then((res) => console.log(res.data))
+      .post(
+        "http://localhost:4000/health/update/" + this.props.match.params.id,
+        health
+      )
+      .then((res) => (window.location = "/"))
       .catch((err) => console.log("Error :" + err))
   }
 

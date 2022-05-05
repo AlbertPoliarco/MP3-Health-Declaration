@@ -1,4 +1,5 @@
 import "bootstrap"
+import "bootstrap/dist/css/bootstrap.css"
 import { Component } from "react"
 import { Link } from "react-router-dom"
 
@@ -6,7 +7,7 @@ export default class Navbar extends Component {
   render() {
     return (
       <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
-        <Link className='navbar-brand' to='/'>
+        <Link className='navbar-brand ms-2' to='/'>
           Health Declaration
         </Link>
         <button
