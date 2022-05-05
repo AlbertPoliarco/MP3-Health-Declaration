@@ -1,13 +1,14 @@
+import SpaTwoToneIcon from "@mui/icons-material/SpaTwoTone"
 import "bootstrap"
 import "bootstrap/dist/css/bootstrap.css"
 import { Component } from "react"
 import { Link } from "react-router-dom"
-
 export default class Navbar extends Component {
   render() {
     return (
       <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
         <Link className='navbar-brand ms-2' to='/'>
+          <SpaTwoToneIcon className='ms-2' />
           Health Declaration
         </Link>
         <button
