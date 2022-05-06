@@ -68,3 +68,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+<!-- HEALTH DECLARATION -->
+
+Made a Health Declaration App.
+
+Check person's temperature and update personal information.
+
+Frontend
+ReactJS, bootstrap, materialui
+
+Backend
+MongoDB
+Create, Read, Update, and Delete
