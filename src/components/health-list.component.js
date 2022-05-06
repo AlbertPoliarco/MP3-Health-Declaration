@@ -1,3 +1,4 @@
+import BackspaceIcon from "@mui/icons-material/Backspace"
 import EditIcon from "@mui/icons-material/Edit"
 import axios from "axios"
 import React, { Component } from "react"
@@ -24,6 +25,7 @@ const Health = (props) => {
           }}
           className='btn btn-sm btn-danger'
         >
+          <BackspaceIcon />
           Delete
         </a>
       </td>
