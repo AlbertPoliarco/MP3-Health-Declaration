@@ -1,7 +1,7 @@
+import EditIcon from "@mui/icons-material/Edit"
 import axios from "axios"
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
-
 const Health = (props) => {
   return (
     <tr>
@@ -12,8 +12,9 @@ const Health = (props) => {
       <td className='text-center'>
         <Link
           to={"/edit/" + props.health._id}
-          className='btn btn-sm btn-primary'
+          className='btn btn-sm btn-primary mg-2'
         >
+          <EditIcon />
           Edit
         </Link>
         <a
