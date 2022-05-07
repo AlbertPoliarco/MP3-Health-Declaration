@@ -15,8 +15,8 @@ const Health = (props) => {
           to={"/edit/" + props.health._id}
           className='btn btn-sm btn-primary mg-2'
         >
-          <EditIcon />
           Edit
+          <EditIcon />
         </Link>
         <a
           href='#'
@@ -25,8 +25,8 @@ const Health = (props) => {
           }}
           className='btn btn-sm btn-danger'
         >
-          <BackspaceIcon />
           Delete
+          <BackspaceIcon />
         </a>
       </td>
     </tr>

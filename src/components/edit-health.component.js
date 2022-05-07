@@ -17,35 +17,18 @@ export default class EditHealth extends Component {
   }
   componentDidMount() {
     axios
-      .get("https://localhost:4000/health/")
+      .get("https://mp-3-health-declaration.vercel.app/health/")
       .then((res) => {
         this.setState({
-          fullname: res.data,
-          temperature: res.data,
-          email: res.data,
-          phonenumber: res.data,
+          fullname: res.data.fullname,
+          temperature: res.data.temperature,
+          email: res.data.email,
+          phonenumber: res.data.phonenumber,
         })
-        return res.data //  returning response
       })
-
       .catch((error) => console.log(error))
   }
 
-  // componentDidMount() {
-  //   axios
-  //     .get("http://localhost:4000/health/")
-  //     .then((res) => {
-  //       this.setState({
-  //         fullname: res.data.fullname,
-  //         temperature: res.data.temperature,
-  //         email: res.data.email,
-  //         phonenumber: res.data.phonenumber,
-  //       })
-  //     })
-  //     .catch((error) => {
-  //       console.log(error)
-  //     })
-  // }
   onValueChange(e) {
     this.setState({
       [e.target.dataset.name]: e.target.value,
@@ -61,7 +44,7 @@ export default class EditHealth extends Component {
       phonenumber: this.state.phonenumber,
     }
     axios
-      .post("http://localhost:4000/health/update/", health)
+      .post("https://mp-3-health-declaration.vercel.app/update/", health)
       .then((res) => (window.location = "/"))
       .catch((err) => console.log("Error :" + err))
   }
@@ -80,6 +63,7 @@ export default class EditHealth extends Component {
               data-name='fullname'
               required
               onChange={this.onValueChange}
+              value={this.state.fullname}
             />
           </div>
           <div className='form-group'>
@@ -91,6 +75,7 @@ export default class EditHealth extends Component {
               data-name='temperature'
               required
               onChange={this.onValueChange}
+              value={this.state.temperature}
             />
           </div>
           <div className='form-group'>
@@ -101,6 +86,7 @@ export default class EditHealth extends Component {
               data-name='email'
               required
               onChange={this.onValueChange}
+              value={this.state.email}
             />
           </div>
           <div className='form-group'>
@@ -111,6 +97,7 @@ export default class EditHealth extends Component {
               data-name='phonenumber'
               required
               onChange={this.onValueChange}
+              value={this.state.phonenumber}
             />
           </div>
 

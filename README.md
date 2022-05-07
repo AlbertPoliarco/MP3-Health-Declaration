@@ -74,10 +74,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 Made a Health Declaration App.
 
 Check person's temperature and update personal information.
-
+Database for the hospitals or clinics
 Frontend
 ReactJS, bootstrap, materialui
 
 Backend
 MongoDB
 Create, Read, Update, and Delete
+
+bug with Edit function
